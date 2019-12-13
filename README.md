@@ -19,7 +19,16 @@ You may assume the string contains only lowercase alphabets.
 Follow up:
 What if the inputs contain unicode characters? How would you adapt your solution to such case?
 
-O(n) solution
+O(n * log(n)) solution. Sort the strings, iterate over them to confirm they are equal.
+
+O(n) solution, iterate over each string. Count the occurance of each character on the first strings, check that there are the same number of occurances in the second strings. 
+
+Exit earlier if the strings don't have the same size.
+
+If there are only ASCII characters, we can use a vector and use the characters integer value. 
+
+To support unicode, we can use an HashMap of Characters instead. The complexity is the same for either, with vectors being slight faster but still constant time. 
+
 
 ```
 boolean isAnagram(String s, String t) {
