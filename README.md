@@ -21,7 +21,7 @@ What if the inputs contain unicode characters? How would you adapt your solution
 
 O(n * log(n)) solution. Sort the strings, iterate over them to confirm they are equal.
 
-O(n) solution, iterate over each string. Count the occurance of each character on the first strings, check that there are the same number of occurances in the second strings. 
+O(n) solution, iterate over each string. Count the occurrence of each character on the first strings, check that there are the same number of occurrence in the second strings. 
 
 Exit earlier if the strings don't have the same size.
 
