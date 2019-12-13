@@ -23,26 +23,26 @@ O(n) solution
 
 ```
 boolean isAnagram(String s, String t) {
-    HashMap<Character, Integer> occurances = new HashMap<>();
+    HashMap<Character, Integer> occurrences = new HashMap<>();
     char[] sChars = s.toCharArray();
     char[] tChars = t.toCharArray();
     if(sChars.length != tChars.length) {
       return false;
     }
     for(char c : sChars){
-      if(occurances.containsKey(c)){
-        occurances.replace(c, occurances.get(c) + 1 );
+      if(occurrences.containsKey(c)){
+        occurrences.replace(c, occurrences.get(c) + 1 );
       } else {
-        occurances.put(c, 1);
+        occurrences.put(c, 1);
       }
     }
     for(char c : tChars){
-      if(occurances.containsKey(c)){
-        occurances.replace(c, occurances.get(c) - 1 );
+      if(occurrences.containsKey(c)){
+        occurrences.replace(c, occurrences.get(c) - 1 );
       } else {
         return false;
       }
     }
-    return occurances.values().stream().allMatch( i -> i == 0);
+    return occurrences.values().stream().allMatch( i -> i == 0);
   }
 ```
